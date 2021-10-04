@@ -1,0 +1,73 @@
+<div *ngIf="data.key == 2">
+  <mat-horizontal-stepper linear #stepper>
+    <mat-step [stepControl]="firstFormGroup">
+      <form [formGroup]="firstFormGroup">
+        <ng-template matStepLabel>User infos</ng-template>
+        <mat-form-field>
+          <mat-label>Name</mat-label>
+          <input matInput formControlName="name" [(ngModel)]="model.name" required>
+        </mat-form-field> <br>
+        <mat-form-field>
+          <mat-label>Password</mat-label>
+          <input type="password" matInput formControlName="password" [(ngModel)]="model.password" required>
+        </mat-form-field><br>
+        <mat-form-field>
+          <mat-label>Gender</mat-label>
+          <mat-select matInput formControlName="gender"  [(ngModel)]="model.gender"required>
+              <mat-option value="male">Male</mat-option>
+              <mat-option value="female">Female</mat-option>
+          </mat-select>
+        </mat-form-field>
+        <div>
+          <button mat-button color="accent" class="float-right" matStepperNext>Next</button>
+        </div>
+      </form>
+    </mat-step>
+
+    <mat-step [stepControl]="secondFormGroup">
+      <form [formGroup]="secondFormGroup">
+        <ng-template matStepLabel>Personal infos</ng-template>
+        <mat-form-field>
+          <mat-label>Email</mat-label>
+          <input matInput formControlName="email" [(ngModel)]="model.email" required>
+        </mat-form-field> <br>
+
+        <mat-form-field>
+          <mat-label>Phone</mat-label>
+          <input matInput formControlName="phone" [(ngModel)]="model.phone" required>
+        </mat-form-field> <br>
+        <mat-form-field>
+          <mat-label>Address</mat-label>
+          <input matInput  [(ngModel)]="model.adress" formControlName="address" required>
+        </mat-form-field><br>
+        <mat-form-field>
+          <mat-label>Card Number</mat-label>
+          <input matInput formControlName="numcard" [(ngModel)]="model.numcard" required>
+        </mat-form-field>
+        <div>
+          <button mat-button class="btn btn-success float-right" >Save</button>
+          <button mat-button color="basic" class="float-right" matStepperPrevious>Back</button>
+        </div>
+      </form>
+    </mat-step>
+  </mat-horizontal-stepper>
+</div>
+
+<!--<form *ngIf="data.key == 1" (ngSubmit)="login()">
+  <h2 class="text-center text-primary">Sign in</h2>
+  <hr>
+
+  <div class="form-group">
+    <input type="text" class="form-control" required name="username" [(ngModel)]="model.username" placeholder="Username">
+  </div>
+
+  <div class="form-group">
+    <input type="password" class="form-control" required name="password" [(ngModel)]="model.password" placeholder="Password">
+  </div>
+
+  <div class="form-group text-center">
+    <button class="btn btn-success" type="submit">log in</button>
+    <button style="margin:10px;" class="btn btn-danger" type="button" (click)="cancelRegister()">Cancel</button>
+  </div>
+</form>-->
+

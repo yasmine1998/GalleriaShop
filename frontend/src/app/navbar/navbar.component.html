@@ -1,1 +1,100 @@
-<p>navbar works!</p>
+<nav class="navbar navbar-expand-md fixed-top navbar-custom">
+  <a class="navbar-brand ml-3">GalleriaShop</a>
+
+  <div class="collapse navbar-collapse" id="navbarCollapse">
+    <ul class="navbar-nav mr-auto">
+      <li class="nav-item active">
+        <a class="nav-link" > Home</a> &nbsp;&nbsp;
+      </li>
+      <li *ngFor="let person of persons"  class="dropdown">
+        <a href="javascript:void(0)" class="dropbtn"> {{person.type}} </a> &nbsp;&nbsp;
+        <ul class="dropdown-content">
+          <div class="dropdown-submenu">
+          <a href="#">Clothes</a>
+          <div class="dropdown-content2">
+            <a href="#" class="blib">Sports</a>
+              <a href="#" class="blib">Swimsuits/underwear</a>
+             <a href="#" class="blib">Tops</a>
+
+             <a href="#" class="blib">Bottoms</a>
+            </div>
+          </div>
+          <div class="dropdown-submenu">
+            <a href="#">Accessories</a>
+            <div class="dropdown-content2">
+              <a href="#" class="blib">bags</a>
+                <a href="#" class="blib">watches & others</a>
+              </div>
+            </div>
+          <a href="#">Shoes</a>
+        </ul>
+      </li>
+
+      <li class="dropdown">
+        <a href="javascript:void(0)" class="dropbtn"> Technologies </a> &nbsp;&nbsp;
+        <ul class="dropdown-content">
+          <div class="dropdown-submenu">
+          <a href="#">Computer components</a>
+          <div class="dropdown-content2">
+            <a href="#" class="blib">Computers</a>
+              <a href="#" class="blib">Keyboards</a>
+             <a href="#" class="blib">Mouse</a>
+
+             <a href="#" class="blib">Headphones</a>
+            </div>
+          </div>
+          <a href="#">Phones</a>
+          <a href="#">Digital tablets</a>
+          <a href="#">Batteries</a>
+          <a href="#">Storage</a>
+        </ul>
+      </li>
+      <li class="dropdown">
+        <a href="javascript:void(0)" class="dropbtn"> Books </a> &nbsp;&nbsp;
+        <ul class="dropdown-content">
+          <div class="dropdown-submenu">
+          <a href="#">Story books</a>
+          <div class="dropdown-content2">
+            <a href="#" class="blib">Horror</a>
+              <a href="#" class="blib">Fiction</a>
+             <a href="#" class="blib">Romance</a>
+             <a href="#" class="blib">Action</a>
+             <a href="#" class="blib">Fantasy</a>
+            </div>
+          </div>
+          <a href="#">Magazines</a>
+          <a href="#">Mangas</a>
+        </ul>
+      </li>
+      <li class="dropdown">
+        <a href="javascript:void(0)" class="dropbtn"> Art </a>
+        <ul class="dropdown-content">
+          <div class="dropdown-submenu">
+          <a href="#">Drawing</a>
+          <div class="dropdown-content2">
+            <a href="#" class="blib">Pencils</a>
+              <a href="#" class="blib">Papers</a>
+             <a href="#" class="blib">WaterColors</a>
+            </div>
+          </div>
+          <div class="dropdown-submenu">
+            <a href="#">Music</a>
+            <div class="dropdown-content2">
+              <a href="#" class="blib">Piano</a>
+                <a href="#" class="blib">Guitarre</a>
+               <a href="#" class="blib">Violon</a>
+              </div>
+            </div>
+          <a href="#">Others</a>
+        </ul>
+      </li>
+    </ul>
+
+
+    <form class="form-inline mt-2 mt-md-0">
+       <a class="dropbtn nav-link" (click)="openRegister(2)"> Sign in</a> &nbsp;&nbsp;
+       <a class="dropbtn nav-link" (click)="openRegister(1)"> Sign up</a>
+    </form>
+  </div>
+</nav>
+
